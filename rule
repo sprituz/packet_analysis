@@ -1,0 +1,29 @@
+rule shell
+{
+	strings:
+		$text_string = "shell"
+		$text_hex = {73 68 65 6c 6c}   
+	condition:
+		$text_hex or $text_string
+}
+
+
+
+rule attack
+{
+	strings:
+		$text_string = "attack"
+		$text_hex = {61 74 74 61 63 6b}   
+	condition:
+		$text_hex or $text_string
+}
+
+
+rule PK
+{
+	strings:
+		$text_string = "PK"
+		$text_hex = {50 4b}
+	condition:
+		$text_hex or $text_string
+}
